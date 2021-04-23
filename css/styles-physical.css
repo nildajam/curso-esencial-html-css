@@ -32,6 +32,11 @@
     --gray20: #212429;
     --gray10: #616161;
 }
+
+html {
+    scroll-behavior: smooth;
+}
+
 body {
     color: var(--gray30);
     font-family: 'Roboto', sans-serif;
@@ -46,8 +51,42 @@ a {
 header {
     /* --gray10: red; */
     font-size: 14px;
+    width: 188px;
     color: var(--gray10);
+    position: absolute;
+    top: 64px;
+    left: -188px;
+    z-index: 1;
     
+    /*
+    border: 1px solid red;
+    background: plum;
+    */
+
+    /*
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    bottom: 0px;
+    right: 0px;
+    margin: 50px;
+    */
+    
+    /* 
+    position: relative;
+    top left bottom right z-index
+    top: 200px;
+    left: 30px;
+    bottom: 100px;
+    right: 50px;
+    z-index: -1;
+    */
+    
+    /*
+    position: fixed;
+    left: 0px;
+    z-index: 1;
+    */
 }
 header a {
     color: var(--gray10);
@@ -60,6 +99,11 @@ header a:hover {
 
 nav details summary {
 font-weight: bold;
+line-height: 24px;
+}
+
+header li {
+    margin-bottom: 16px;
 }
 
 h1 {
@@ -68,16 +112,25 @@ h1 {
     /* font-size: 3.75em; */
     margin-top: 64px;
     margin-bottom: 16px;
-    /* ma rgin-left: 20px;
-    margin-right: 10px; */
-    /*  margin: top right bottom left;
+    font-weight: normal;
+    /* 
+    margin-left: 20px;
+    margin-right: 10px; 
+    */
+    
+    /* 
+    margin: top right bottom left;
     margin: 64px 10px 16px 20px;
     margin: 10px 5px;
-    margin: 30px 20px 10px; */
-    /* border: 10px solid red;
+    margin: 30px 20px 10px; 
+    */
+    
+    /* 
+    border: 10px solid red;
     width: 400px;
     height: 400px;
-    padding: 40px; */
+    padding: 40px; 
+    */
 }
 
 /* h1 + p {
@@ -100,6 +153,9 @@ h3 {
     margin-top: 16px;
     margin-bottom: 24px;
     font-weight: normal;
+    position: sticky;
+    top: 0;
+    background: white;
     /*
     width: 200px;
     border: 1px solid red;
@@ -124,11 +180,20 @@ blockquote span::before {
     content: '-';
 }
 
-.main {
-/*
-    background-image: linear-gradient(to top, rgba(255, 255, 255, .3), transparent), url('../images/pattern.png');
-*/
+.header {
+    position: sticky;
+    top: 0px;
 }
+
+.header-content {
+    position: relative;
+}
+
+/*
+.main {
+    background-image: linear-gradient(to top, rgba(255, 255, 255, .3), transparent), url('../images/pattern.png'); 
+}
+*/
 
 .wrapper {
     width: 902px;
@@ -137,7 +202,9 @@ blockquote span::before {
 
 .main-content {
     background: white;
+    /*
     padding: 20px;
+    */
 }
 
 .debug {
@@ -186,13 +253,15 @@ pre {
 .section-content img {
     margin-top: 40px;
 }
+
 .section-content {
     counter-reset: titleList;
 }
+
 .section-content h3 {
     counter-increment: titleList;
     /* background: red; */
-    padding-bottom: 4px;
+    padding-bottom: 8px;
 }
 
 .section-content h3::before {
@@ -201,10 +270,13 @@ content: counter(titleList, decimal) '. ';
 
 .section-content h3::after {
     content: '';
-    width: 32px;
+    width: 80px;
     height: 4px;
     background: var(--gray30);
     display: inline-block;
+    position: absolute;
+    left: 0;
+    bottom: 0;
 }
 
 /* ::selection {

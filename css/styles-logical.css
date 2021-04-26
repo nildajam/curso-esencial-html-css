@@ -28,63 +28,159 @@
 
 :root {
     font-size: 18px;
-    --gray30: #212121;
-    --gray20: #212429;
-    --gray10: #616161;
+    --white30: white;
+    --white20: #A5A3A5;
+    --white10: #3A3539;
 }
+
 body {
-    color: var(--gray30);
-    font-family: 'Roboto', sans-serif;
-    /* font-family: charter; */
+    color: var(--white30);
+    font-family: 'Nunito', sans-serif;
+    background: #251F24;
+    margin: 0;
+    /*
+    writing-mode: vertical-lr;
+    margin: 10px 10px 10px 10px;
+    margin-inline: 100px;
+    margin-block: 100px;
+    margin-block-start: 50px;
+    margin-block-end: 50px;
+    margin: 0 100px;
+    margin-block: 0px;
+    font-family: charter;
+    */
 }
 
 a {
-    color: var(--gray30);
+    color: var(--white30);
+}
+
+.header {
+    position: sticky;
+    inset-block-start: -45px;
+    /*
+    background: plum;
+    position: fixed;
+    inset: 50px;
+    */
+}
+
+.header-content {
+    position: relative;
+    inset-block-start: 65px;
 }
 
 header {
-    /* --gray10: red; */
+    /* --white10: red; */
     font-size: 14px;
-    color: var(--gray10);
-    
+    color: var(--white30);
+    position: absolute;
+    /*
+    top
+    */
+    inset-block-start: 0;
+    /*
+    bottom
+    inset-block-end: ;
+    right
+    inset-inline-end: ;
+    */
+    /*
+    left
+    */
+    inset-inline-start: -208px;
+    inline-size: 188px;
 }
+
+header li {
+    color: var(--white20);
+    margin-block-end: 16px;
+}
+
 header a {
-    color: var(--gray10);
-    text-decoration: none;
+    color: var(--white20);
 }
 
 header a:hover {
-    color: var(--gray30);
+    color: var(--white30);
 }
 
 nav details summary {
 font-weight: bold;
 }
 
+/*
+h1, h2, h3 {
+    font-weight: normal;
+}
+*/
+
 h1 {
     font-size: 60px;
-    /* text-decoration: none; */
-    /* font-size: 3.75em; */
+    margin-block-start: 64px;
+    margin-block-end: 16px;
+    /*
+    text-decoration: none;
+    font-size: 3.75em; 
+    */
 }
 
 h2 {
     font-size: 2em;
+    margin-block: 40px;
 }
 
 h3 {
     font-size: 1.5em;
+    font-weight: 600;
+    margin-block: 16px;
+}
+
+hr {
+    margin-block: 40px;
+    border-color: rgba(97, 97, 97, 0.2);
 }
 
 pre {
-    background: #FEC62E;
+    background: var(--white10);
+    padding: 40px;
+    overflow: auto;
+    border-radius: 8px;
+    border: 10px solid #5551FF;
+    box-shadow: -10px 10px 0 0 #ABAAF6;
+    margin-block-end: 30px;
+    /*
+    border: 10px solid red;
+    border-inline-start: 5px solid white;
+    border-block-end: 20px solid pink;
+    border-inline-end: 5px solid green;
+    border-block-start-color: blue;
+    bord er-radius: 50%;
+    inline-size: 400px;
+    block-size: 400px;
+    border-start-start-radius: 60px;
+    */
+}
+
+p {
+    color: var(--white20);
 }
 
 .hero {
-    background-image: linear-gradient(to top, rgba(255, 255, 255, .3), transparent), url('../images/pattern.png');
+    background-image: linear-gradient(96.07deg, #314755 30.63%, #26A0DA 102.18%);
     /* background-repeat: no-repeat; */
     /* background-position: left 50px bottom -50px; */
     /* background-size: cover*/
     height: 350px;
+}
+
+.section-content img {
+    margin-block-start: 40px;
+    display: block;
+    max-inline-size: 100%;
+    /*
+    max-width: 100%;
+    */
 }
 
 .section-content {
@@ -95,17 +191,66 @@ pre {
 }
 
 .section-content h3::before {
-content: counter(titleList, decimal);
+content: counter(titleList, decimal)'. ';
 }
 
+/*
 .section-content h3::after {
     content: '';
     width: 32px;
     height: 4px;
-    background: var(--gray30);
+    background: var(--white30);
     display: inline-block;
+}
+*/
+
+blockquote {
+    margin-inline-start: 80px;
+    margin-inline-end: 63px;
+    background-color: var(--white10);
+    border-radius: 8px;
+    line-height: 32px;
+    font-size: 24px;
+    padding-inline-end: 24px;
+    padding-inline-start: 24px;
+    padding-block-start: 24px;
+    padding-block-end: 24px;
+}
+
+blockquote p {
+    color: var(--white30);
 }
 
 /* ::selection {
     background: green;
 } */
+
+.main hr {
+    display: none;
+}
+
+/*
+.main {
+    border: 2px solid red;
+}
+*/
+
+.wrapper {
+    max-inline-size: 902px;
+    margin: auto;
+    /*
+    width: ;
+    block-size: 100px;
+    overflow: auto;
+    max-width: 902px;
+    inline-size: 902px;
+    border: 2px solid yellow;
+    */
+}
+
+.main-content {
+    padding-inline: 16px;
+    /*
+    border: 2px solid blue;
+    */
+}
